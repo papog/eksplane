@@ -1,0 +1,14 @@
+<title> Process {{object_id}}</title>
+<h1> Process {{object_id}}: available observations</h1>
+{% if action_list %}
+        <ul>
+        {% for action in action_list %}
+            <li>
+              <a href="{{action.url}}{{object_id}}/">{{action.text}}</a>
+            </li>
+        {% endfor %}
+        </ul>
+{% else %}
+     <p>No such process available.</p>
+{% endif %}
+

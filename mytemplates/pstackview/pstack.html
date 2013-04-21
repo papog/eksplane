@@ -1,0 +1,14 @@
+{% if object_list %}
+        <table>
+        {% for level in object_list %}
+            <tr>
+               {% for col in level %}
+                 <td> {{ col }} </td>
+               {% endfor %}
+            </tr>
+        {% endfor %}
+        </table>
+{% else %}
+     <p>No such process available.</p>
+{% endif %}
+

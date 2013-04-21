@@ -1,0 +1,22 @@
+<pre>
+{{ tree|pprint }}
+</pre>
+<ul>
+  {% for subtree in tree.components%}
+  <li><a href="/dirtree{{subtree.path}}">{{subtree.title}}</a>:{{subtree.summary}}</li>
+  {% if subtree.components %}
+  <ul> 
+    {% for sub2tree in subtree.components %}
+       <li> <a href="/dirtree{{sub2tree.path}}">{{sub2tree.title}}</a> : {{sub2tree.summary}} </li>
+       {% if sub2tree.components %}
+          <ul>
+          {% for sub3tree in sub2tree.components %}
+             <li> <a href=/dirtree{{sub3tree.path}}">{{sub3tree.title}}</a>:{{sub3tree.summary}}</li>
+          {% endfor %}
+          </ul>
+       {% endif %} 
+    {% endfor %}
+ </ul>
+  {% endif %}
+  {% endfor %}
+</ul>

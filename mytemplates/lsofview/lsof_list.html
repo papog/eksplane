@@ -1,0 +1,14 @@
+{% if object_list %}
+        <table>
+        {% for ps in object_list %}
+            <tr>
+               {% for col in ps %}
+                 <td> {{ col }} </td>
+               {% endfor %}
+            </tr>
+        {% endfor %}
+        </table>
+{% else %}
+     <p>No polls are available.</p>
+{% endif %}
+

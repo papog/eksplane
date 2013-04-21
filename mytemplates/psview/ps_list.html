@@ -1,0 +1,22 @@
+{% if head_list %}
+       <table>
+        <tr>
+           {% for head in head_list %}
+           <td> {{head}} </td>
+           {% endfor %}
+        </tr>
+        {% for ps in object_list %}
+            <tr>
+               {% for item in ps %}
+                 <td> {% if item.url %} <a href="{{item.url}}{{item.data}}">{{item.data}}</a>
+                      {% else %}{{ item.data }}
+                      {% endif %}
+                 </td>
+               {% endfor %}
+            </tr>
+        {% endfor %}
+        </table>
+{% else %}
+     <p>No such process available.</p>
+{% endif %}
+

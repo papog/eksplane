@@ -1,0 +1,12 @@
+Observation:
+ - url
+ - template
+ - function to call for view
+ - args for function to call (what to turn into hyperlinks)
+
+Object:
+ - url
+ - name
+ - available observations
+ - features observations (displayed on the page showing the object)
+
